@@ -19,6 +19,8 @@ const Weather = () => {
         borderRadius: "50%",
         cursor: "pointer",
         color: "#fff",
+        marginLeft: "10px",
+        marginTop: "1rem",
     }
 
     const inputRef = useRef();
@@ -179,13 +181,18 @@ const Weather = () => {
               
       <div className="weather">
           <div className="search-bar">
-              <input ref={inputRef} type="text" placeholder="Search..." />
+                <input ref={inputRef} type="text" placeholder="City name..." />
+                
+                <div className="row">
                 <img src="" alt="" />
                  <input ref={countryRef} type="text" placeholder="Country Code (e.g., GB)" />
            
                 <FaSearch style={style} onClick={()=> search(inputRef.current.value, countryRef.current.value)} />
-               <button className="location-button"  onClick={getLocation}>Use My Location</button>
-              
+                </div>
+                
+                    <button className="location-button" onClick={getLocation}>Use My Location</button>
+                    
+               
             </div>
             
             {weatherData ? <>  
