@@ -207,7 +207,7 @@ const Weather = () => {
 
                 <div className="weather-data">
                     
-                    <div className="row">
+                    <div className="row1">
                         <div className="col">
                             <WiHumidity className="weather-img"/>
                             <span>Humidity</span>
@@ -233,7 +233,7 @@ const Weather = () => {
                     </div>
                            
                     
-                    <div className="row">
+                    <div className="row1">
                 
                         <div className="col">
                                         
