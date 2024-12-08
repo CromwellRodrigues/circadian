@@ -7,7 +7,7 @@ import { FaCloud } from "react-icons/fa";
 import { BsCloudDrizzleFill } from "react-icons/bs";
 import { WiDaySunny } from "react-icons/wi";
 import { WiHumidity } from "react-icons/wi";
-import { FaWind } from "react-icons/fa6";
+import { FaWind } from "react-icons/fa";
 import { MdNightlightRound } from "react-icons/md";
 
 const Weather = () => {
@@ -205,54 +205,58 @@ const Weather = () => {
                 <p className="location">{weatherData.location}, {weatherData.country}</p>
           
 
-          <div className="weather-data">
-              <div className="col">
-                  <WiHumidity className="weather-img"/>
-                  <span>Humidity</span>
-                  <div className = " ">
-                        
-                        <p>{ weatherData.humidity}%</p>
-                     
-                  </div>
-
-              </div>
-
-
-            <div className="col">
-                <FaWind  className="weather-img"/>
-                   <span>Wind</span> 
-                <div>
-                    <p>{ weatherData.windSpeed} km/hr</p>
-                   
-                </div>
-
-            </div>
+                <div className="weather-data">
                     
+                    <div className="row">
+                        <div className="col">
+                            <WiHumidity className="weather-img"/>
+                            <span>Humidity</span>
+                            <div className = " ">
+                                    
+                                    <p>{ weatherData.humidity}%</p>
+                                
+                            </div>
 
-                           
-                
-            <div className="col">
+                        </div>
+
+
+                        <div className="col">
+                            <FaWind  className="weather-img"/>
+                            <span>Wind</span> 
+                            <div>
+                                <p>{ weatherData.windSpeed} km/hr</p>
                             
-                <WiDaySunny  className="weather-img"/>
-                  <span>Sunrise</span> 
-                <div>
-                    <p>{formatTime(sun.sunrise, timezoneOffset)} AM </p>
+                            </div>
+
+                        </div>
                     
-                </div>
+                    </div>
+                           
+                    
+                    <div className="row">
+                
+                        <div className="col">
+                                        
+                            <WiDaySunny  className="weather-img"/>
+                            <span>Sunrise</span> 
+                            <div>
+                                <p>{formatTime(sun.sunrise, timezoneOffset)} AM </p>
+                                
+                            </div>
 
-            </div>
+                        </div>
 
-            <div className="col">
-                < MdNightlightRound className="weather-img"/>
-                    <span>Sunset</span> 
-                <div>
-                    <p>{formatTime(sun.sunset, timezoneOffset)} PM </p>
-                  
-                </div>
+                        <div className="col">
+                            < MdNightlightRound className="weather-img"/>
+                                <span>Sunset</span> 
+                            <div>
+                                <p>{formatTime(sun.sunset, timezoneOffset)} PM </p>
+                            
+                            </div>
 
-            </div>
+                        </div>
                         
-            
+                    </div>
         </div>
 
         </> : <></>}
