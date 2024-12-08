@@ -129,8 +129,24 @@ const Weather = () => {
                 searchByCoordinates(latitude, longitude);
             }, (error) => {
                 console.error(error);
-                alert("Unable to retrieve your location");
-            });
+                 switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert("User denied the request for Geolocation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("Location information is unavailable.");
+                        break;
+                    case error.TIMEOUT:
+                        alert("The request to get user location timed out.");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        alert("An unknown error occurred.");
+                        break;
+                }
+            },
+            { timeout: 10000, maximumAge: 60000, enableHighAccuracy: true }
+        );
+           
         } else {
             alert("Geolocation is not supported by this browser.");
         }
